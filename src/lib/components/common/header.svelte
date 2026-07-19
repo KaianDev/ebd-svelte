@@ -25,7 +25,7 @@
 		</Button>
 		<div class="hidden lg:block">
 			<Button>
-				<PlusIcon/>
+				<PlusIcon />
 				Registrar aula
 			</Button>
 		</div>
