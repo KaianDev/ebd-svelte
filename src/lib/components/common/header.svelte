@@ -1,14 +1,12 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { BellIcon, ListIcon } from 'phosphor-svelte';
+	import { BellIcon, ListIcon, PlusIcon } from 'phosphor-svelte';
 
 	interface Props {
 		title: string;
 		description: string;
-		children: Snippet;
 	}
-	let { title, description, children }: Props = $props();
+	let { title, description }: Props = $props();
 </script>
 
 <header class="flex items-center justify-between border-b px-6 py-4">
@@ -26,7 +24,10 @@
 			<BellIcon />
 		</Button>
 		<div class="hidden lg:block">
-			{@render children()}
+			<Button>
+				<PlusIcon/>
+				Registrar aula
+			</Button>
 		</div>
 	</div>
 </header>
