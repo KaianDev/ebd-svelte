@@ -1,0 +1,16 @@
+# https://lefthook.dev/configuration/
+
+pre-commit:
+  jobs:
+    - name: format
+      glob: '*.{js,ts,svelte,json,css,html,md}'
+      run: pnpm prettier --write {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: check
+      run: pnpm check
+    - name: test
+      run: pnpm test
