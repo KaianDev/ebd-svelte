@@ -1,17 +1,18 @@
 <script lang="ts">
 	import { Badge } from '$lib/components/ui/badge';
 	import { CardHeader, Card, CardTitle, CardContent } from '$lib/components/ui/card';
-	import type { Class } from '$lib/domain/class';
+	import { getClassColor, type Class } from '$lib/domain/class';
 	interface Props {
 		class: Class;
 	}
 	let { class: classData }: Props = $props();
+	let color = $derived(getClassColor(classData.id));
 </script>
 
 <Card>
 	<CardHeader>
 		<div class="flex items-center gap-2">
-			<span class="size-2 rounded-full bg-primary"></span>
+			<span class="size-2 rounded-full" style:background-color={color}></span>
 			<CardTitle>{classData.name}</CardTitle>
 			<Badge class="ml-auto" variant={classData.isActive ? 'default' : 'destructive'}
 				>{classData.isActive ? 'Ativo' : 'Inativo'}</Badge
