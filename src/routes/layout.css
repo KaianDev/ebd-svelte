@@ -118,13 +118,8 @@
 	--radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@layer utilities {
-	.btn-active {
-		@apply border-primary text-primary hover:bg-primary/10 hover:text-primary;
-	}
-	.app-container {
-		@apply max-w-7xl p-6;
-	}
+@utility app-container {
+	@apply max-w-7xl p-6;
 }
 
 @layer base {

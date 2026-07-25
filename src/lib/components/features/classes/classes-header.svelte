@@ -13,7 +13,7 @@
 	</InputGroup>
 
 	<div class="flex items-center gap-2">
-		<Button variant="outline" class="btn-active">Todas</Button>
+		<Button variant="outline-active">Todas</Button>
 		<Button variant="outline">Ativas</Button>
 		<Button variant="outline">Inativas</Button>
 	</div>
