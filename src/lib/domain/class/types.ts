@@ -9,6 +9,7 @@ export interface Class {
 	isActive: boolean;
 	createdAt: string;
 	updatedAt: string;
+	activeEnrollmentsCount: number;
 }
 
 export interface ListClassesResponse {
