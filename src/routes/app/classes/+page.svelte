@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Header } from '$lib/components/common';
+	import { ClassCard } from '$lib/components/features/classes';
 	let { data } = $props();
 </script>
 
@@ -8,9 +9,10 @@
 {#await data.classes}
 	<p>Carregando turmas…</p>
 {:then { classes }}
+	{console.log(classes)}
 	<ul>
-		{#each classes as turma (turma.id)}
-			<li>{turma.name} ({turma.minAge}–{turma.maxAge} anos)</li>
+		{#each classes as _class (_class.id)}
+			<li><ClassCard class={_class} /></li>
 		{:else}
 			<li>Nenhuma turma encontrada.</li>
 		{/each}
